@@ -5,3 +5,106 @@
   height:auto;
   object-fit:contain;
 }.mini{width:95px;height:175px;border-radius:12px;background:linear-gradient(145deg,#c5cbd1,#4c596b,#121b27);display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:.15em;box-shadow:0 25px 50px #0008}.card h3{font-size:24px;margin:5px 0}.card button{width:100%;padding:12px;background:transparent;border:1px solid #526177;color:white;cursor:pointer;margin-top:15px}.card button:hover{background:#e8edf2;color:#071426}.story{margin:0 8%;padding:90px 8%;background:#102642;border:1px solid #ffffff10}.story h2{font-size:52px;line-height:1;max-width:700px}.story p,.prose p{color:#b2bdcb;max-width:760px}.page{padding:100px 8%;background:linear-gradient(120deg,#0e2440,#071426);border-bottom:1px solid #ffffff10}.page h1{font-size:64px;line-height:1;margin:8px 0}.product{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.product .visual{min-height:520px}.product h1{font-size:60px;line-height:1}.checkout{display:grid;grid-template-columns:1.2fr .8fr;gap:30px}.checkout form,.summary,.contact form{background:#0b1c31;padding:28px;border:1px solid #ffffff10}.checkout input,.checkout textarea,.checkout select,.contact input,.contact textarea{width:100%;padding:14px;margin-bottom:14px;background:#071426;border:1px solid #34445b;color:white}.checkout textarea,.contact textarea{min-height:120px}.summary{height:max-content}.contact{display:grid;grid-template-columns:1fr 1fr;gap:50px}.prose{max-width:850px}footer{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;padding:60px 8%;border-top:1px solid #ffffff10;color:#95a3b5}footer div{display:flex;flex-direction:column;gap:8px}.chat{position:fixed;right:24px;bottom:24px;z-index:50}.chat>button{border:0;border-radius:30px;padding:13px 22px;font-weight:bold}.chat>#chatBox{display:none;background:#0b1c31;border:1px solid #ffffff22;padding:18px;width:290px;margin-bottom:10px}.chat.open>#chatBox{display:block}.chat input{width:100%;padding:10px;background:#071426;border:1px solid #34445b;color:#fff;margin:10px 0}.reveal{opacity:0;transform:translateY(32px);transition:.8s}.reveal.visible{opacity:1;transform:none}@keyframes float{50%{transform:translateY(-15px) rotate(-2deg)}}@media(max-width:800px){.menu{display:block}nav{display:none;position:absolute;top:70px;left:0;right:0;padding:20px 7%;background:#071426;flex-direction:column}.open nav{display:flex}.hero,.product,.checkout,.contact{grid-template-columns:1fr}.hero{padding:70px 7%}.trust,.grid{grid-template-columns:1fr 1fr}.page h1{font-size:46px}footer{grid-template-columns:1fr 1fr}}@media(max-width:520px){.trust,.grid{grid-template-columns:1fr}.hero h1{font-size:52px}.heading{display:block}}
+/* HERO BOTTLE DROP + FLOOR CRACK EFFECT */
+
+.hero-bottle{
+  position:relative;
+}
+
+.bottle{
+  animation: bottleDrop 1.8s cubic-bezier(.18,.75,.25,1) forwards;
+  transform-origin:center bottom;
+}
+
+.hero-bottle::before{
+  content:"";
+  position:absolute;
+  bottom:18px;
+  left:50%;
+  width:250px;
+  height:35px;
+  transform:translateX(-50%) scale(.2);
+  border-radius:50%;
+  background:#0008;
+  filter:blur(8px);
+  opacity:0;
+  animation:impactShadow 1.8s ease-out forwards;
+  animation-delay:1.15s;
+}
+
+.hero-bottle::after{
+  content:"";
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  width:300px;
+  height:85px;
+  transform:translateX(-50%);
+  opacity:0;
+  background:
+    linear-gradient(25deg,transparent 47%,#d9e1ea 48%,#d9e1ea 49%,transparent 50%),
+    linear-gradient(155deg,transparent 47%,#d9e1ea 48%,#d9e1ea 49%,transparent 50%),
+    linear-gradient(75deg,transparent 49%,#d9e1ea 50%,#d9e1ea 51%,transparent 52%),
+    linear-gradient(105deg,transparent 49%,#d9e1ea 50%,#d9e1ea 51%,transparent 52%);
+  animation:cracksAppear .5s ease-out forwards;
+  animation-delay:1.2s;
+  pointer-events:none;
+}
+
+@keyframes bottleDrop{
+  0%{
+    transform:translateY(-430px) rotate(8deg);
+    opacity:0;
+  }
+
+  45%{
+    opacity:1;
+  }
+
+  78%{
+    transform:translateY(18px) rotate(-2deg) scaleY(.96);
+  }
+
+  88%{
+    transform:translateY(-8px) rotate(1deg) scaleY(1.02);
+  }
+
+  100%{
+    transform:translateY(0) rotate(0) scaleY(1);
+    opacity:1;
+  }
+}
+
+@keyframes impactShadow{
+  0%{
+    opacity:0;
+    transform:translateX(-50%) scale(.2);
+  }
+
+  60%{
+    opacity:.8;
+    transform:translateX(-50%) scale(1.15);
+  }
+
+  100%{
+    opacity:.35;
+    transform:translateX(-50%) scale(1);
+  }
+}
+
+@keyframes cracksAppear{
+  0%{
+    opacity:0;
+    transform:translateX(-50%) scale(.2);
+  }
+
+  60%{
+    opacity:1;
+    transform:translateX(-50%) scale(1.1);
+  }
+
+  100%{
+    opacity:.8;
+    transform:translateX(-50%) scale(1);
+  }
+}
