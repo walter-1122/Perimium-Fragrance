@@ -108,3 +108,75 @@
     transform:translateX(-50%) scale(1);
   }
 }
+/* BOTTLE DROP IMPACT ANIMATION */
+
+.hero-bottle{
+  position:relative;
+}
+
+.hero-bottle .bottle{
+  animation: perfumeDrop 1.6s cubic-bezier(.18,.8,.25,1) forwards;
+}
+
+.hero-bottle::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:35px;
+  width:280px;
+  height:100px;
+  transform:translateX(-50%) scale(0);
+  opacity:0;
+  pointer-events:none;
+
+  background:
+    linear-gradient(25deg,transparent 48%,#ffffff 49%,#ffffff 50%,transparent 51%),
+    linear-gradient(155deg,transparent 48%,#ffffff 49%,#ffffff 50%,transparent 51%),
+    linear-gradient(70deg,transparent 49%,#ffffff 50%,#ffffff 51%,transparent 52%),
+    linear-gradient(110deg,transparent 49%,#ffffff 50%,#ffffff 51%,transparent 52%);
+
+  animation: floorCrack .35s ease-out forwards;
+  animation-delay:1.35s;
+}
+
+@keyframes perfumeDrop{
+
+  0%{
+    transform:translateY(-500px) rotate(8deg);
+    opacity:0;
+  }
+
+  55%{
+    opacity:1;
+  }
+
+  82%{
+    transform:translateY(15px) rotate(-2deg);
+  }
+
+  92%{
+    transform:translateY(-8px) rotate(1deg);
+  }
+
+  100%{
+    transform:translateY(0) rotate(0);
+  }
+}
+
+@keyframes floorCrack{
+
+  0%{
+    transform:translateX(-50%) scale(0);
+    opacity:0;
+  }
+
+  70%{
+    transform:translateX(-50%) scale(1.15);
+    opacity:1;
+  }
+
+  100%{
+    transform:translateX(-50%) scale(1);
+    opacity:.8;
+  }
+}
