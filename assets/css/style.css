@@ -180,3 +180,124 @@
     opacity:.8;
   }
 }
+/* HERO REAL PERFUME */
+
+.hero-bottle{
+  position:relative;
+  min-height:420px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-perfume{
+  position:relative;
+  z-index:2;
+  width:auto;
+  height:360px;
+  max-width:80%;
+  object-fit:contain;
+  filter:drop-shadow(0 35px 35px #0009);
+  animation:perfumeDrop 1.6s cubic-bezier(.18,.8,.25,1) forwards;
+}
+
+
+/* CRACKED FLOOR */
+
+.hero-bottle::after{
+  content:"";
+  position:absolute;
+  z-index:1;
+  left:50%;
+  bottom:28px;
+  width:260px;
+  height:90px;
+  transform:translateX(-50%) scale(0);
+  opacity:0;
+
+  background:
+    linear-gradient(125deg,
+      transparent 47%,
+      #d8dde3 48%,
+      #d8dde3 49%,
+      transparent 50%
+    ),
+    linear-gradient(55deg,
+      transparent 47%,
+      #d8dde3 48%,
+      #d8dde3 49%,
+      transparent 50%
+    ),
+    linear-gradient(165deg,
+      transparent 48%,
+      #d8dde3 49%,
+      #d8dde3 50%,
+      transparent 51%
+    );
+
+  clip-path:polygon(
+    50% 0%,
+    54% 35%,
+    72% 10%,
+    61% 45%,
+    92% 30%,
+    65% 55%,
+    82% 88%,
+    55% 62%,
+    38% 100%,
+    44% 58%,
+    12% 78%,
+    39% 48%,
+    5% 35%,
+    43% 39%
+  );
+
+  animation:floorCrack .45s ease-out forwards;
+  animation-delay:1.35s;
+}
+
+
+/* DROP */
+
+@keyframes perfumeDrop{
+  0%{
+    transform:translateY(-500px) rotate(8deg);
+    opacity:0;
+  }
+
+  55%{
+    opacity:1;
+  }
+
+  82%{
+    transform:translateY(15px) rotate(-2deg);
+  }
+
+  92%{
+    transform:translateY(-8px) rotate(1deg);
+  }
+
+  100%{
+    transform:translateY(0) rotate(0);
+  }
+}
+
+
+/* IMPACT */
+
+@keyframes floorCrack{
+  0%{
+    transform:translateX(-50%) scale(0);
+    opacity:0;
+  }
+
+  60%{
+    transform:translateX(-50%) scale(1.15);
+    opacity:1;
+  }
+
+  100%{
+    transform:translateX(-50%) scale(1);
+    opacity:.9;
+  }
+}
