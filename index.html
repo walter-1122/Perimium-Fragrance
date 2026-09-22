@@ -2,7 +2,45 @@
 <header><a class="logo" href="index.html">Premium<span>FRAGRANCE</span></a><button class="menu">☰</button><nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="cart.html">Cart <b id="cartCount">0</b></a></nav></header>
 <main><section class="hero reveal"><div><small>Premium FRAGRANCE</small><h1>Leave a lasting impression.</h1><p>Premium fragrances crafted for presence, confidence and unforgettable moments.</p><a class="btn" href="shop.html">Explore Collection</a></div><div class="hero-bottle"><div class="bottle">Premium<small>FRAGRANCE</small></div></div></section>
 <section class="trust reveal"><div><b>50ml</b><span>Premium bottles</span></div><div><b>7 Days</b><span>Returns</span></div><div><b>250 PKR</b><span>Delivery</span></div><div><b>Secure</b><span>Checkout</span></div></section>
-<section class="section"><div class="heading reveal"><div><small>THE COLLECTION</small><h2>Signature scents</h2></div><a href="shop.html">View all →</a></div><div id="featured" class="grid"></div></section>
+<section class="section"><div class="heading reveal"><div><small>THE COLLECTION</small><h2>Signature scents</h2></div><a href="shop.html">View all →</a></div><div id="homeProducts" class="grid">
+
+  <article class="card reveal">
+    <a href="product.html?name=Savage%20Dior">
+      <div class="visual">
+        <img src="assets/sauvage.png" alt="Savage Dior">
+      </div>
+      <small>50ML • PREMIUM FRAGRANCE</small>
+      <h3>Savage Dior</h3>
+      <strong>PKR 5,000</strong>
+    </a>
+    <button onclick="addToCart('Savage Dior')">Add to Cart</button>
+  </article>
+
+  <article class="card reveal">
+    <a href="product.html?name=The%20Signature">
+      <div class="visual">
+        <img src="assets/sauvage.png" alt="The Signature">
+      </div>
+      <small>50ML • PREMIUM FRAGRANCE</small>
+      <h3>The Signature</h3>
+      <strong>PKR 5,000</strong>
+    </a>
+    <button onclick="addToCart('The Signature')">Add to Cart</button>
+  </article>
+
+  <article class="card reveal">
+    <a href="product.html?name=Shaheer">
+      <div class="visual">
+        <img src="assets/sauvage.png" alt="Shaheer">
+      </div>
+      <small>50ML • PREMIUM FRAGRANCE</small>
+      <h3>Shaheer</h3>
+      <strong>PKR 5,000</strong>
+    </a>
+    <button onclick="addToCart('Shaheer')">Add to Cart</button>
+  </article>
+
+</div></section>
 <section class="story reveal"><small>OUR PHILOSOPHY</small><h2>Fragrance is more than a scent.</h2><p>Premium Fragrance brings together modern elegance and confident character in a collection designed for everyday presence.</p></section></main>
 <footer><div><a class="logo" href="index.html">Premium<span>FRAGRANCE</span></a></div><div><a href="shipping.html">Shipping</a><a href="returns.html">Returns</a><a href="privacy.html">Privacy</a></div><div>03214825245<br>DHA Phase 4, Lahore</div></footer>
 <div class="chat"><button id="chatToggle">Chat</button><div id="chatBox"><b>Premium Fragrance</b><p>Hi! How can we help?</p><input id="chatInput" placeholder="Type a message"><button onclick="sendChat()">Send</button><p id="chatReply"></p></div></div><script src="assets/js/app.js"></script></body></html>
