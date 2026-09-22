@@ -301,3 +301,37 @@
     opacity:.9;
   }
 }
+.hero-perfume{
+  height:360px;
+  width:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 30px 30px #0009);
+  animation:dropPerfume 1.6s ease-out forwards;
+}
+
+.hero-bottle::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:25px;
+  width:220px;
+  height:80px;
+  transform:translateX(-50%) scale(0);
+  opacity:0;
+  background:
+    linear-gradient(120deg,transparent 48%,#aaa 49%,transparent 51%),
+    linear-gradient(60deg,transparent 48%,#aaa 49%,transparent 51%);
+  animation:crackFloor .4s ease-out 1.3s forwards;
+}
+
+@keyframes dropPerfume{
+  0%{transform:translateY(-450px) rotate(8deg);opacity:0}
+  75%{transform:translateY(15px) rotate(-2deg);opacity:1}
+  90%{transform:translateY(-8px)}
+  100%{transform:translateY(0) rotate(0)}
+}
+
+@keyframes crackFloor{
+  0%{transform:translateX(-50%) scale(0);opacity:0}
+  100%{transform:translateX(-50%) scale(1);opacity:1}
+}
