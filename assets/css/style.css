@@ -995,3 +995,10 @@ footer .logo{
     font-size:38px;
   }
 }
+body{
+  background:#202020 !important;
+}
+
+header{
+  background:#171717 !important;
+}
